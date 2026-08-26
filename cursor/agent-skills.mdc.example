@@ -1,0 +1,33 @@
+
+---
+description: Use global agent-skills workflows
+alwaysApply: true
+---
+
+# Agent skills routing
+
+This project uses the global agent-skills install (not project-local copies):
+
+- Skills: `~/.agents/skills/` → `/home/primozs/agent-skills/skills/`
+- References: `~/.agents/references/` → `/home/primozs/agent-skills/references/`
+- Personas (Cursor subagents): `~/.cursor/agents/` → `/home/primozs/agent-skills/agents/`
+
+Before non-trivial technical work:
+
+1. Route via the `using-agent-skills` skill.
+2. Read and follow the matching skill under `~/.agents/skills/<name>/SKILL.md`.
+3. Open linked checklists under `~/.agents/references/` when the skill points to them.
+4. Prefer skills over guessing; the user does not need to say "read skill" each time.
+
+## Personas (optional specialists)
+
+Default to skills. Delegate to a persona via Task / subagent when the user wants a dedicated specialist pass (or clearly asks for review, security, test strategy, or web perf audit). Personas do not call other personas; you (or the user) orchestrate. Skills remain the *how* inside a persona when relevant.
+
+| Persona | Prefer when |
+|---------|-------------|
+| `code-reviewer` | Full five-axis review before merge |
+| `security-auditor` | Dedicated security / threat pass |
+| `test-engineer` | Test strategy, coverage gaps, Prove-It |
+| `web-performance-auditor` | Core Web Vitals / frontend perf audit |
+
+Do not fan out personas on every small change.
