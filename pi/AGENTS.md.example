@@ -1,0 +1,46 @@
+# Agent skills (pi)
+
+This project uses the global agent-skills install. Pi auto-discovers skills from `~/.agents/skills/` — no config needed.
+
+## Commands
+
+Skills register as `/skill:<name>` commands (enabled by default):
+
+```text
+/skill:spec-driven-development add user authentication
+/skill:planning-and-task-breakdown
+/skill:incremental-implementation
+/skill:test-driven-development
+/skill:code-review-and-quality
+/skill:code-simplification
+/skill:shipping-and-launch
+```
+
+## Intent → skill mapping
+
+Before non-trivial technical work, route to the matching skill:
+
+| Intent | Skill |
+|--------|-------|
+| Feature / new functionality | `spec-driven-development`, then `incremental-implementation`, `test-driven-development` |
+| Planning / breakdown | `planning-and-task-breakdown` |
+| Bug / failure / unexpected behavior | `debugging-and-error-recovery` |
+| Code review | `code-review-and-quality` |
+| Refactoring / simplification | `code-simplification` |
+| API or interface design | `api-and-interface-design` |
+| UI work | `frontend-ui-engineering` |
+
+## References
+
+Checklists live at `~/.agents/references/` — open them when a skill points to them.
+
+## Personas (optional specialists)
+
+Personas live at `~/.agents/agents/`. Default to skills. Delegate to a persona when the user wants a dedicated specialist pass (review, security, test strategy, web perf audit). Personas do not call other personas; you (or the user) orchestrate.
+
+| Persona | Prefer when |
+|---------|-------------|
+| `code-reviewer` | Full five-axis review before merge |
+| `security-auditor` | Dedicated security / threat pass |
+| `test-engineer` | Test strategy, coverage gaps |
+| `web-performance-auditor` | Core Web Vitals / frontend perf audit |
