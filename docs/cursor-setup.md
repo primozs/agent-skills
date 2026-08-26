@@ -165,6 +165,41 @@ Full tree: `skills/using-agent-skills/SKILL.md` in the repo.
 
 ---
 
+## Command skills (`as-*`)
+
+Cursor has no native slash commands like Claude Code's `/spec`. This repo ships **command skills** — thin wrappers that mirror `.claude/commands/` and invoke the full workflow skills when you type `/as-*` in Agent chat.
+
+| Slash | Underlying skill(s) | Claude equivalent |
+|-------|---------------------|-------------------|
+| `/as-spec` | `spec-driven-development` | `/spec` |
+| `/as-plan` | `planning-and-task-breakdown` | `/plan` |
+| `/as-build` | `incremental-implementation`, `test-driven-development` | `/build` |
+| `/as-test` | `test-driven-development` | `/test` |
+| `/as-review` | `code-review-and-quality` | `/review` |
+| `/as-code-simplify` | `code-simplification` | `/code-simplify` |
+| `/as-ship` | personas + `shipping-and-launch` | `/ship` |
+| `/as-webperf` | `web-performance-auditor` persona | `/webperf` |
+
+Text after the slash command is treated as **$ARGUMENTS** — e.g. `/as-spec add user auth` or `/as-build auto`.
+
+Source in this repo: [`cursor/command-skills/`](../cursor/command-skills/). Each skill sets `disable-model-invocation: true` so it only runs when explicitly invoked.
+
+### Install command skills
+
+After syncing workflow skills (step 1 above), symlink command skills:
+
+```bash
+/path/to/agent-skills/cursor/install.sh
+```
+
+This links `cursor/command-skills/as-*` into `~/.cursor/skills/` as sibling folders next to the workflow skills. Override the target with `CURSOR_SKILLS_DIR` if needed.
+
+For a **project-local** install, symlink or copy each `cursor/command-skills/as-*` folder into your project's `.cursor/skills/` instead.
+
+Command skills are **optional** — workflow skills alone still work via intent routing or by naming the skill directly.
+
+---
+
 ## What not to do
 
 | Avoid | Do instead |
@@ -211,6 +246,7 @@ Files under `agent-skills/agents/` (e.g. code reviewer persona) are **not** load
 ## Checklist (new project)
 
 - [ ] `mkdir -p .cursor/skills` and sync from `agent-skills/skills/`
+- [ ] Optional: run `agent-skills/cursor/install.sh` for `/as-*` command skills
 - [ ] Optional: `.cursor/rules/agent-skills.mdc` with routing hint
 - [ ] Add repo-specific rules as separate small `.mdc` files
 - [ ] Commit `.cursor/skills/` and `.cursor/rules/` (team shares behavior)
