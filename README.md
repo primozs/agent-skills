@@ -212,7 +212,7 @@ Skills are plain Markdown - they work with any agent that accepts system prompts
 
 ## Adoption
 
-Already installed? How you roll the pack out depends on your codebase. The **[Adoption Guide](docs/adoption-guide.md)** covers two paths: the full lifecycle from day one for a greenfield project, or an incremental, verification-first rollout for an established codebase.
+Already installed? How you roll the pack out depends on your codebase. The **[Adoption Guide](docs/adoption-guide.md)** covers two paths: the full lifecycle from day one for a greenfield project, or an incremental, verification-first rollout for an established codebase. For command-by-command lifecycle guidance — including build modes, stopping mid-run, and refactor/optimize paths — see **[Workflows](docs/workflows.md)**.
 
 ---
 
