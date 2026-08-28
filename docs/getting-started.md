@@ -41,7 +41,7 @@ Start with the `using-agent-skills` skill loaded. It contains a flowchart that m
 
 ## Recommended Setup
 
-Rolling out to a real project? The **[Adoption Guide](adoption-guide.md)** covers two end-to-end paths: the full lifecycle from day one for a greenfield project, and an incremental, verification-first rollout for an established codebase. The setup below is the quick version.
+Rolling out to a real project? The **[Adoption Guide](adoption-guide.md)** covers two end-to-end paths: the full lifecycle from day one for a greenfield project, and an incremental, verification-first rollout for an established codebase. For detailed command lifecycles — when to use `/build` vs `/build auto`, refactor and optimize paths, and mid-run recovery — see **[Workflows](workflows.md)**. The setup below is the quick version.
 
 ### Minimal (Start here)
 
