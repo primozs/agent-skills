@@ -71,6 +71,7 @@ export default function (pi: ExtensionAPI) {
     ["as-code-simplify", "code-simplify"],
     ["as-ship", "ship"],
     ["as-webperf", "webperf"],
+    ["as-ponytail-audit", "ponytail-audit"],
   ];
 
   for (const [cmdName, tomlFile] of commands) {

@@ -6,7 +6,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${CURSOR_SKILLS_DIR:-$HOME/.cursor/skills}"
 SOURCE="$REPO_ROOT/cursor/command-skills"
 
-skills=(as-spec as-plan as-build as-test as-review as-code-simplify as-ship as-webperf)
+skills=(as-spec as-plan as-build as-test as-review as-code-simplify as-ship as-webperf as-ponytail-audit)
 
 mkdir -p "$TARGET"
 

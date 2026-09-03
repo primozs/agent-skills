@@ -179,6 +179,7 @@ Cursor has no native slash commands like Claude Code's `/spec`. This repo ships 
 | `/as-code-simplify` | `code-simplification` | `/code-simplify` |
 | `/as-ship` | personas + `shipping-and-launch` | `/ship` |
 | `/as-webperf` | `web-performance-auditor` persona | `/webperf` |
+| `/as-ponytail-audit` | ponytail-audit + context / doubt / simplify / test / review | `/ponytail-audit` |
 
 Text after the slash command is treated as **$ARGUMENTS** — e.g. `/as-spec add user auth` or `/as-build auto`.
 

@@ -378,7 +378,7 @@ agent-skills/
 ├── .claude/commands/                  # 8 slash commands (Claude Code)
 ├── .gemini/commands/                  # 8 slash commands (Gemini CLI)
 ├── commands/                          # 8 slash commands (Antigravity CLI)
-├── cursor/command-skills/             # 8 command skills for Cursor (/as-*)
+├── cursor/command-skills/             # 9 command skills for Cursor (/as-*)
 ├── plugin.json                        # Antigravity plugin manifest
 └── docs/                              # Setup guides per tool
 ```
