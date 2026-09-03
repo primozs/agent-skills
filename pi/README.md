@@ -35,6 +35,7 @@ The extension registers `/as-*` commands that mirror the Claude Code `.toml` com
 | `/as-code-simplify` | `code-simplification` |
 | `/as-ship` | `shipping-and-launch` + personas |
 | `/as-webperf` | `web-performance-auditor` persona |
+| `/as-ponytail-audit` | ponytail-audit + context / doubt / simplify / test / review |
 
 Arguments pass through: `/as-spec add user authentication`.
 

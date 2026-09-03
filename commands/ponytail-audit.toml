@@ -1,0 +1,56 @@
+description = "Ponytail over-engineering audit → PONYTAIL-AUDIT.md → fix one finding at a time with agent-skills"
+
+prompt = """
+Run the as-ponytail-audit workflow (brownfield: audit once, persist, burn down one checkbox at a time). Do not auto-commit. Stop after each resolved or skipped item.
+
+## Arguments
+
+| Args | Mode |
+|------|------|
+| empty / `audit` | Run audit on the whole repo; write/overwrite `PONYTAIL-AUDIT.md`; stop |
+| `<path>` / `audit <path>` | Run audit scoped to that folder only; same file + stop |
+| `next` | Fix the first unchecked item; stop |
+| `<N>` | Fix item number N; stop |
+| `skip <N> [reason]` | Mark item N wontfix; stop |
+| `status` | List open / done / skipped; change nothing |
+
+Reserved modes (`next`, `status`, `skip …`, bare `audit`, integer `<N>`) win first; otherwise a path-looking arg is a scoped audit. Example: `/as-ponytail-audit src/api`.
+
+## Audit file
+
+`PONYTAIL-AUDIT.md` at repo root (even when scoped):
+
+```markdown
+# Ponytail audit — <YYYY-MM-DD>
+<!-- optional: Scope: <path> -->
+
+- [ ] 1. `delete:` <what to cut>. <replacement>. [`path`]
+…
+
+net: -<N> lines, -<M> deps possible
+```
+
+Checked = done. Skips: `- [~] wontfix: <reason>`.
+
+## Mode: audit
+
+1. Resolve scope: no path → whole repo; path given → that directory only (refuse if missing / not a directory).
+2. If ponytail-audit is installed (`~/.agents/skills/ponytail-audit/SKILL.md` or `~/.cursor/skills/ponytail-audit/SKILL.md`), follow it and pass the folder scope when set. Else hunt over-engineering only and emit one line per finding with tags `delete:` `stdlib:` `native:` `yagni:` `shrink:`. End with `net: -<N> lines, -<M> deps possible.` Or `Lean already. Ship.`
+3. Write numbered checkboxes to `PONYTAIL-AUDIT.md` (biggest cut first). If scoped, note `Scope: <path>` under the title.
+4. Summarize count + top 3 (and scope if set). Do not fix anything. Stop.
+
+## Mode: next / `<N>`
+
+1. Read `PONYTAIL-AUDIT.md` (missing → tell user to run audit first).
+2. Pick target item; work ONLY that item.
+3. Tier by tag:
+   - `delete:` / obvious dead → context-engineering → cut → run tests (add a check only if uncovered)
+   - `stdlib:` / `native:` / `shrink:` → same + code-simplification
+   - `yagni:` / multi-caller / public API → context-engineering → doubt-driven-development → minimum fix → code-review-and-quality if cross-module → tests
+4. Wrong/risky → mark wontfix with one-line reason. Stop.
+5. Success → mark `[x]`, summarize diff, report remaining open count. Stop. Wait for next invocation.
+
+## Boundaries
+
+One item per invocation (except audit/status/skip). No commits unless the user explicitly asks. Over-engineering only.
+"""

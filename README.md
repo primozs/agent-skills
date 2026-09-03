@@ -360,6 +360,7 @@ The portable core stays in shared directories. Host-specific paths are native di
 | Antigravity CLI adapter | `commands/` (9 commands), `plugin.json` | Legacy TOML wrappers and the root plugin manifest; see the [known wrapper limitation](docs/antigravity-setup.md#lifecycle-workflows-and-command-compatibility) |
 | Codex adapter | `.codex-plugin/`, `.agents/plugins/` | Codex plugin metadata and marketplace registration; Codex consumes `skills/` directly |
 | Cursor lifecycle wrappers | `cursor/command-skills/` (`/as-*`) | Optional `/as-*` entry points; install with `./cursor/install.sh` |
+| Pi agent adapter | `pi/` | Install script and command bindings for the Pi agent |
 | GitHub Copilot CLI adapter | `plugin.json` | Root plugin metadata; Copilot CLI discovers `skills/` by convention and does not register the lifecycle wrappers |
 | Contributor tooling | `scripts/` (13 scripts), `evals/` (25 case files), `.github/workflows/` | Validation, routing evals, and CI |
 | Documentation | `docs/` | Universal guidance and per-tool setup guides |
