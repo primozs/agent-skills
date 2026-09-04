@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-build"
+  short_description: "Implement next task (or auto) with TDD"
+policy:
+  allow_implicit_invocation: false

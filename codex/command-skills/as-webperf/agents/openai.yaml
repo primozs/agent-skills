@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-webperf"
+  short_description: "Web performance / CWV audit"
+policy:
+  allow_implicit_invocation: false

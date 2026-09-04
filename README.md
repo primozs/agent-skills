@@ -180,7 +180,7 @@ codex plugin marketplace add addyosmani/agent-skills
 codex plugin add agent-skills@agent-skills
 ```
 
-The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills in chat using `@` (e.g., `@spec-driven-development`). See [docs/codex-setup.md](docs/codex-setup.md) for local installation and troubleshooting.
+The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills with `$` (e.g., `$spec-driven-development`) or `/skills`. Optional lifecycle wrappers (`$as-spec`, `$as-build`, …): run `./codex/install.sh`. See [docs/codex-setup.md](docs/codex-setup.md) and [codex/command-skills/README.md](codex/command-skills/README.md).
 
 </details>
 
@@ -379,6 +379,7 @@ agent-skills/
 ├── .gemini/commands/                  # 8 slash commands (Gemini CLI)
 ├── commands/                          # 8 slash commands (Antigravity CLI)
 ├── cursor/command-skills/             # 9 command skills for Cursor (/as-*)
+├── codex/command-skills/              # 9 command skills for Codex ($as-*)
 ├── plugin.json                        # Antigravity plugin manifest
 └── docs/                              # Setup guides per tool
 ```

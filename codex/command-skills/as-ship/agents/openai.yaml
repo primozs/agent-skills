@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-ship"
+  short_description: "Pre-launch go/no-go with specialist reviews"
+policy:
+  allow_implicit_invocation: false

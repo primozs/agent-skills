@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-code-simplify"
+  short_description: "Simplify without behavior change"
+policy:
+  allow_implicit_invocation: false

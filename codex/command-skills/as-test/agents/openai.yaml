@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-test"
+  short_description: "TDD / Prove-It for a change or bug"
+policy:
+  allow_implicit_invocation: false
