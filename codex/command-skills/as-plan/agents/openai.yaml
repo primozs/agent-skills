@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-plan"
+  short_description: "Break work into verifiable tasks"
+policy:
+  allow_implicit_invocation: false

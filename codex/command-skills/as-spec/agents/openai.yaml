@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-spec"
+  short_description: "Write SPEC.md before coding"
+policy:
+  allow_implicit_invocation: false

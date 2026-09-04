@@ -31,7 +31,7 @@ Eight slash commands map to the development lifecycle. Each activates the right 
 | `/webperf` | web-performance-auditor + performance-optimization | Measure before you optimize |
 | `/ship` | shipping-and-launch | Faster is safer |
 
-On Cursor, the same commands are available as `/as-spec`, `/as-plan`, `/as-build`, and so on.
+On Cursor, the same commands are available as `/as-spec`, `/as-plan`, `/as-build`, and so on. On Codex, install with `./codex/install.sh` and use `$as-spec`, `$as-plan`, `$as-build`, and so on.
 
 **You are the orchestrator.** There is no automated lifecycle runner. You run commands in an order that fits the work, carrying context and commit history between steps. Human judgment between phases catches wrong-direction work early.
 

@@ -183,7 +183,7 @@ codex plugin marketplace add addyosmani/agent-skills
 codex plugin add agent-skills@agent-skills
 ```
 
-The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills in chat using `@` (e.g., `@spec-driven-development`). See [docs/codex-setup.md](docs/codex-setup.md) for local installation and troubleshooting.
+The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills with `$` (e.g., `$spec-driven-development`) or `/skills`. Optional lifecycle wrappers (`$as-spec`, `$as-build`, …): run `./codex/install.sh`. See [docs/codex-setup.md](docs/codex-setup.md) and [codex/command-skills/README.md](codex/command-skills/README.md).
 
 </details>
 
@@ -359,6 +359,7 @@ The portable core stays in shared directories. Host-specific paths are native di
 | Gemini CLI adapter | `.gemini/commands/` (9 commands) | Gemini-native TOML command wrappers |
 | Antigravity CLI adapter | `commands/` (9 commands), `plugin.json` | Legacy TOML wrappers and the root plugin manifest; see the [known wrapper limitation](docs/antigravity-setup.md#lifecycle-workflows-and-command-compatibility) |
 | Codex adapter | `.codex-plugin/`, `.agents/plugins/` | Codex plugin metadata and marketplace registration; Codex consumes `skills/` directly |
+| Codex lifecycle wrappers | `codex/command-skills/` (`$as-*`) | Optional `$as-*` entry points; install with `./codex/install.sh` |
 | Cursor lifecycle wrappers | `cursor/command-skills/` (`/as-*`) | Optional `/as-*` entry points; install with `./cursor/install.sh` |
 | Pi agent adapter | `pi/` | Install script and command bindings for the Pi agent |
 | GitHub Copilot CLI adapter | `plugin.json` | Root plugin metadata; Copilot CLI discovers `skills/` by convention and does not register the lifecycle wrappers |

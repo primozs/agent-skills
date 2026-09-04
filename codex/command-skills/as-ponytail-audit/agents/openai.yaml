@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-ponytail-audit"
+  short_description: "Over-engineering audit and burn-down"
+policy:
+  allow_implicit_invocation: false

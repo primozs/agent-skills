@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-review"
+  short_description: "Five-axis code review"
+policy:
+  allow_implicit_invocation: false
