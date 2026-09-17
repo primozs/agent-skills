@@ -21,6 +21,8 @@ In Codex CLI / IDE, invoke with `$` (or pick via `/skills`):
 ```text
 $as-spec add user authentication
 $as-plan
+$as-constraints
+$as-constraints check
 $as-build
 $as-build auto
 $as-build-auto-loop
@@ -56,6 +58,7 @@ project's `.agents/skills/` instead (Codex scans that path from CWD up to repo r
 |---------|---------------------|-----------------|
 | `$as-spec` | `spec-driven-development` | `/as-spec` / `/spec` |
 | `$as-plan` | `planning-and-task-breakdown` | `/as-plan` / `/plan` |
+| `$as-constraints` | `constraint-driven-development` | `/as-constraints` / `/constraints` |
 | `$as-build` | `incremental-implementation`, `test-driven-development` | `/as-build` / `/build` |
 | `$as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) | `/as-build-auto-loop` / `/build-auto-loop` |
 | `$as-test` | `test-driven-development` | `/as-test` / `/test` |
@@ -80,6 +83,7 @@ project's `.agents/skills/` instead (Codex scans that path from CWD up to repo r
 codex/command-skills/
 ├── as-spec/SKILL.md
 ├── as-plan/SKILL.md
+├── as-constraints/SKILL.md
 ├── as-build/SKILL.md
 ├── as-build-auto-loop/SKILL.md
 ├── as-test/SKILL.md

@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-constraints"
+  short_description: "Define CONSTRAINTS.md quality bar"
+policy:
+  allow_implicit_invocation: false

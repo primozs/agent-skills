@@ -9,6 +9,8 @@ Invoke from Cursor Agent chat with `/`:
 ```text
 /as-spec add user authentication
 /as-plan
+/as-constraints
+/as-constraints check
 /as-build
 /as-build auto
 /as-build-auto-loop
@@ -45,6 +47,7 @@ Then symlink command skills (from repo root):
 |---------|---------------------|-------------------|
 | `/as-spec` | `spec-driven-development` | `/spec` |
 | `/as-plan` | `planning-and-task-breakdown` | `/plan` |
+| `/as-constraints` | `constraint-driven-development` | `/constraints` |
 | `/as-build` | `incremental-implementation`, `test-driven-development` | `/build` |
 | `/as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) | `/build-auto-loop` |
 | `/as-test` | `test-driven-development` | `/test` |
@@ -60,6 +63,7 @@ Then symlink command skills (from repo root):
 cursor/command-skills/
 ├── as-spec/SKILL.md
 ├── as-plan/SKILL.md
+├── as-constraints/SKILL.md
 ├── as-build/SKILL.md
 ├── as-build-auto-loop/SKILL.md
 ├── as-test/SKILL.md

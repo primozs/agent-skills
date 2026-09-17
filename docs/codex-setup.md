@@ -39,6 +39,7 @@ That symlinks the wrappers into `~/.codex/skills/`. Restart Codex, then:
 ```text
 $as-spec add user authentication
 $as-plan
+$as-constraints
 $as-build
 $as-build auto
 $as-build-auto-loop

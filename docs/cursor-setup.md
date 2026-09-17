@@ -173,6 +173,7 @@ Cursor has no native slash commands like Claude Code's `/spec`. This repo ships 
 |-------|---------------------|-------------------|
 | `/as-spec` | `spec-driven-development` | `/spec` |
 | `/as-plan` | `planning-and-task-breakdown` | `/plan` |
+| `/as-constraints` | `constraint-driven-development` | `/constraints` |
 | `/as-build` | `incremental-implementation`, `test-driven-development` | `/build` |
 | `/as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) | `/build-auto-loop` |
 | `/as-test` | `test-driven-development` | `/test` |

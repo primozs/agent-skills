@@ -65,6 +65,7 @@ export default function (pi: ExtensionAPI) {
   const commands: [string, string][] = [
     ["as-spec", "spec"],
     ["as-plan", "planning"],
+    ["as-constraints", "constraints"],
     ["as-build", "build"],
     ["as-build-auto-loop", "build-auto-loop"],
     ["as-test", "test"],
