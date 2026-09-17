@@ -41,6 +41,7 @@ $as-spec add user authentication
 $as-plan
 $as-build
 $as-build auto
+$as-build-auto-loop
 $as-test
 $as-review
 $as-code-simplify

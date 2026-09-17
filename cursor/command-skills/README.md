@@ -11,6 +11,7 @@ Invoke from Cursor Agent chat with `/`:
 /as-plan
 /as-build
 /as-build auto
+/as-build-auto-loop
 /as-test fix the checkout bug
 /as-review
 /as-code-simplify
@@ -45,6 +46,7 @@ Then symlink command skills (from repo root):
 | `/as-spec` | `spec-driven-development` | `/spec` |
 | `/as-plan` | `planning-and-task-breakdown` | `/plan` |
 | `/as-build` | `incremental-implementation`, `test-driven-development` | `/build` |
+| `/as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) | `/build-auto-loop` |
 | `/as-test` | `test-driven-development` | `/test` |
 | `/as-review` | `code-review-and-quality` | `/review` |
 | `/as-code-simplify` | `code-simplification` | `/code-simplify` |
@@ -59,6 +61,7 @@ cursor/command-skills/
 ├── as-spec/SKILL.md
 ├── as-plan/SKILL.md
 ├── as-build/SKILL.md
+├── as-build-auto-loop/SKILL.md
 ├── as-test/SKILL.md
 ├── as-review/SKILL.md
 ├── as-code-simplify/SKILL.md

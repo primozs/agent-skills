@@ -30,6 +30,7 @@ The extension registers `/as-*` commands that mirror the Claude Code `.toml` com
 | `/as-spec` | `spec-driven-development` |
 | `/as-plan` | `planning-and-task-breakdown` |
 | `/as-build` | `incremental-implementation` + `test-driven-development` |
+| `/as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) |
 | `/as-test` | `test-driven-development` |
 | `/as-review` | `code-review-and-quality` |
 | `/as-code-simplify` | `code-simplification` |

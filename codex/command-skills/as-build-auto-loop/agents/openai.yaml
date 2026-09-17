@@ -1,0 +1,5 @@
+interface:
+  display_name: "as-build-auto-loop"
+  short_description: "Auto build with review/ship loops across specs"
+policy:
+  allow_implicit_invocation: false

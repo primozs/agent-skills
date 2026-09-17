@@ -23,6 +23,7 @@ $as-spec add user authentication
 $as-plan
 $as-build
 $as-build auto
+$as-build-auto-loop
 $as-test fix the checkout bug
 $as-review
 $as-code-simplify
@@ -56,6 +57,7 @@ project's `.agents/skills/` instead (Codex scans that path from CWD up to repo r
 | `$as-spec` | `spec-driven-development` | `/as-spec` / `/spec` |
 | `$as-plan` | `planning-and-task-breakdown` | `/as-plan` / `/plan` |
 | `$as-build` | `incremental-implementation`, `test-driven-development` | `/as-build` / `/build` |
+| `$as-build-auto-loop` | plan + implement + TDD + review + git + ship (core skills only) | `/as-build-auto-loop` / `/build-auto-loop` |
 | `$as-test` | `test-driven-development` | `/as-test` / `/test` |
 | `$as-review` | `code-review-and-quality` | `/as-review` / `/review` |
 | `$as-code-simplify` | `code-simplification` | `/as-code-simplify` / `/code-simplify` |
@@ -79,6 +81,7 @@ codex/command-skills/
 ├── as-spec/SKILL.md
 ├── as-plan/SKILL.md
 ├── as-build/SKILL.md
+├── as-build-auto-loop/SKILL.md
 ├── as-test/SKILL.md
 ├── as-review/SKILL.md
 ├── as-code-simplify/SKILL.md

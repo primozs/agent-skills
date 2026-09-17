@@ -1,0 +1,47 @@
+---
+description: Autonomously build approved specs — per-task implement→review→fix→git, then ship→fix→git if needed, then next module.
+---
+
+Orchestrate a full autonomous build using **only** core agent-skills workflow skills — never other slash-command wrappers.
+
+## Core skills
+
+- `planning-and-task-breakdown`
+- `incremental-implementation`
+- `test-driven-development`
+- `doubt-driven-development`
+- `code-review-and-quality`
+- `git-workflow-and-versioning`
+- `shipping-and-launch`
+- `debugging-and-error-recovery`
+
+## Spec discovery
+
+Require a spec. Do not invent requirements.
+
+1. **Multi-module:** If `CAPABILITY-MAP.md` (or equivalent approved map) exists, walk modules in build order. Specs are `SPEC-<module-id>.md`.
+2. **Single-spec:** Else `SPEC.md`, `docs/SPEC.md`, or a file under `spec/`.
+
+Plans: `tasks/plan.md` / `tasks/todo.md`, or `tasks/plan-<id>.md` / `tasks/todo-<id>.md` per module.
+
+## Outer loop
+
+For each incomplete module (or the single spec) in order:
+
+1. Clean baseline (`git status --porcelain`); stop if unrelated uncommitted work.
+2. Checkpoint once when new plans will be created — wait for unambiguous `approve` / `go` / `yes`.
+3. Plan if needed; commit plan artifacts alone via `git-workflow-and-versioning`.
+4. **Task loop** for every pending task:
+   - Implement with `incremental-implementation` + `test-driven-development` (RED → GREEN → suite → build). Do not commit yet.
+   - **Review → fix loop:** `code-review-and-quality` until no Critical/Important. Fix with TDD (and DDD when high-stakes). Cap 3 cycles then ask.
+   - **Commit** with `git-workflow-and-versioning` (atomic, task files only). Mark task done.
+5. **Ship → fix loop:** `shipping-and-launch` until GO. Fix blockers with TDD/DDD. Cap 3 cycles then ask. Commit with git skill **if** the ship loop changed files.
+6. If more modules remain and dependencies are done: plan the next and continue (no second approval).
+
+When every module is done (or after a single spec): final `shipping-and-launch` pass over the whole initiative (same ship→fix→git-if-needed), then summarize.
+
+## Hard stops
+
+Stop on: unfixable tests/build, ambiguous spec, irreversible/high-risk work (use `doubt-driven-development` + sign-off), or review/ship caps. Resume by re-invoking this command.
+
+$ARGUMENTS

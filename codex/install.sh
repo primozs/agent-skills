@@ -6,7 +6,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${CODEX_SKILLS_DIR:-$HOME/.codex/skills}"
 SOURCE="$REPO_ROOT/codex/command-skills"
 
-skills=(as-spec as-plan as-build as-test as-review as-code-simplify as-ship as-webperf as-ponytail-audit)
+skills=(as-spec as-plan as-build as-build-auto-loop as-test as-review as-code-simplify as-ship as-webperf as-ponytail-audit)
 
 mkdir -p "$TARGET"
 

@@ -162,6 +162,7 @@ You do **not** normally re-run completed tasks unless review or testing exposed 
 | Check quality of work so far | `/review` — safe anytime |
 | Reproduce or fix one specific bug | `/test` |
 | All plan tasks done, ready to merge | `/review` → `/ship` |
+| Autonomously build with per-task review + ship gates | `/build-auto-loop` (or `/as-build-auto-loop`) |
 
 ---
 

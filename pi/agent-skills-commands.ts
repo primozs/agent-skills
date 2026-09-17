@@ -66,6 +66,7 @@ export default function (pi: ExtensionAPI) {
     ["as-spec", "spec"],
     ["as-plan", "planning"],
     ["as-build", "build"],
+    ["as-build-auto-loop", "build-auto-loop"],
     ["as-test", "test"],
     ["as-review", "review"],
     ["as-code-simplify", "code-simplify"],
